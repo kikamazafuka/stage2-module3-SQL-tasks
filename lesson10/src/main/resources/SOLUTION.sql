@@ -1,0 +1,2 @@
+SELECT * FROM subject WHERE grade > (SELECT AVG(grade) FROM Subject);
+SELECT * FROM Student WHERE id IN (SELECT student_id FROM Payment GROUP BY student_id HAVING SUM(amount) < (SELECT AVG(SUM(amount)) FROM Payment GROUP BY student_id));
